@@ -1,0 +1,8 @@
+openai-whisper
+transformers
+torch
+streamlit
+plotly
+groq
+python-dotenv
+pandas

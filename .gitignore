@@ -1,0 +1,23 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Scratch files / development scripts
+test_hf.py
+test_hf2.py
+ai_coding_mistakes_checklist.jsx
+
+# Streamlit logs
+.streamlit/credentials.toml
+
+# OS generated files
+.DS_Store
+Thumbs.db
