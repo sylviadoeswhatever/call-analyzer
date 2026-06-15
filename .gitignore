@@ -14,6 +14,8 @@ __pycache__/
 test_hf.py
 test_hf2.py
 ai_coding_mistakes_checklist.jsx
+MASTER_RULES.md
+UI_WORKFLOW.md
 
 # Streamlit logs
 .streamlit/credentials.toml
