@@ -4,7 +4,15 @@ A fully local, privacy-first customer service call analysis pipeline built with 
 
 ## 🎥 Video Demo
 
-> **Note to developer:** *Drop your video file into an `assets/` folder in this repo and replace this line with `![Demo](assets/demo.mp4)` or a YouTube link!*
+<video src="PASTE_YOUR_GITHUB_LINK_HERE" autoplay loop muted playsinline width="100%"></video>
+
+https://github.com/user-attachments/assets/d55c0d31-d704-4e6d-88a1-018fbc805e80
+
+
+
+
+
+
 
 ## 🚀 Features
 
