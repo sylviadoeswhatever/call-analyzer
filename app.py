@@ -9,7 +9,7 @@ from utils import segments_to_csv
 from test_scripts import TEST_SCRIPTS
 
 # Page Config
-st.set_page_config(page_title="Call Analyser", layout="wide")
+st.set_page_config(page_title="Call Analyser", page_icon="📞", layout="wide")
 
 # Custom CSS for aesthetics and animations
 st.markdown("""
@@ -52,13 +52,12 @@ st.markdown("""
     .main-title {
         font-family: 'Press Start 2P', cursive !important;
         color: #392A48 !important;
-        font-size: 2.2rem !important;
+        font-size: 2.6rem !important;
         text-align: center;
         margin-bottom: 2rem;
-        padding: 1.5rem;
-        border: 4px solid #392A48;
-        background-color: #E4DAF5;
-        box-shadow: 8px 8px 0px 0px #9B7EBD;
+        padding: 1rem 0;
+        text-shadow: 4px 4px #D2C5EB;
+        border-bottom: 4px dashed #392A48;
         text-transform: uppercase;
     }
 
@@ -188,21 +187,24 @@ def main():
             if "show_script" not in st.session_state:
                 st.session_state.show_script = False
 
+            def toggle_script_on():
+                st.session_state.show_script = True
+                st.session_state.test_script = random.choice(TEST_SCRIPTS)
+
+            def toggle_script_off():
+                st.session_state.show_script = False
+
+            def refresh_script():
+                st.session_state.test_script = random.choice(TEST_SCRIPTS)
+
             if not st.session_state.show_script:
-                if st.button("Generate Test Script"):
-                    st.session_state.show_script = True
-                    st.session_state.test_script = random.choice(TEST_SCRIPTS)
-                    st.rerun()
+                st.button("Generate Test Script", on_click=toggle_script_on)
             else:
                 col_gen1, col_gen2, col_gen_space = st.columns([3, 2, 7])
                 with col_gen1:
-                    if st.button("Generate Test Script", use_container_width=True):
-                        st.session_state.show_script = False
-                        st.rerun()
+                    st.button("Generate Test Script", use_container_width=True, key="btn_close", on_click=toggle_script_off)
                 with col_gen2:
-                    if st.button("Refresh", use_container_width=True):
-                        st.session_state.test_script = random.choice(TEST_SCRIPTS)
-                        st.rerun()
+                    st.button("Refresh", use_container_width=True, on_click=refresh_script)
                         
                 if "test_script" in st.session_state:
                     st.markdown(f'<div class="test-script-box">{st.session_state.test_script}</div>', unsafe_allow_html=True)
